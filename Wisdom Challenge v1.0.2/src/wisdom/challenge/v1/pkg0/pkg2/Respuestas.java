@@ -20,16 +20,16 @@ public class Respuestas {
     
     //aqui van las respuestas señuelo con las correctas
     String [] todRespuestas = {
-      /*0*/ " Cristobal Colon, Cristoso Colombo, Cristoforo Colombo, Cristofor Colon",
-      /*1*/ " Inglés, Galés, Escocés, Irlandés",
-      /*2*/ " Polonia, Austria, Alemania, Hungría",
-      /*3*/ " Thomas Jefferson, John Adams, James Madison, George Washington",
-      /*4*/ " Madrid, Londres, Berlín, París",
-      /*5*/ " En 1949, En 1932, En 1939, En 1814 ",
-      /*6*/ " Islamismo, Cristianismo, Budismo, Hinduismo",
-      /*7*/ " India, Estados Unidos, Japón, China",
-      /*8*/ " Macedonia, Grecia, Bulgaria, Albania",
-      /*9*/ " China, Rusia, Estados Unidos, Canadá"
+      /*0*/ "Cristobal Colon,Cristoso Colombo,Cristoforo Colombo,Cristofor Colon",
+      /*1*/ "Inglés,Galés,Escocés,Irlandés",
+      /*2*/ "Polonia,Austria,Alemania,Hungría",
+      /*3*/ "Thomas Jefferson,John Adams,James Madison,George Washington",
+      /*4*/ "Madrid,Londres,Berlín,París",
+      /*5*/ "En 1949,En 1932,En 1939,En 1814",
+      /*6*/ "Islamismo,Cristianismo,Budismo,Hinduismo",
+      /*7*/ "India,Estados Unidos,Japón,China",
+      /*8*/ "Macedonia,Grecia,Bulgaria,Albania",
+      /*9*/ "China,Rusia,Estados Unidos,Canadá"
         
     };
     

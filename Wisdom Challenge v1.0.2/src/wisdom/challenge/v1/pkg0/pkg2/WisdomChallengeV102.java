@@ -2,23 +2,21 @@
 package wisdom.challenge.v1.pkg0.pkg2;
 
 // Victor Esparza
+
+import java.util.Random;
+
 // Manuel Palma
 
 public class WisdomChallengeV102 {
     
-   
+ 
     
     public static void main(String[] args) {
-         int pos=5;
-    Respuestas resp = new Respuestas();
-    Preguntas preg = new Preguntas();
-    
-            System.out.println(preg.llamarPreguntas(pos));
-            String  [] aux = resp.establecerRespuesta(pos);
-            System.out.println("A) "+aux[0]);
-            System.out.println("B) "+aux[1]);
-            System.out.println("C) "+aux[2]);
-            System.out.println("D) "+aux[3]);
+      int pos=0;  
+      Random azar = new Random();
+      pos= azar.nextInt(10);
+      
+      Conf programa = new Conf(pos);
     
     }
     
