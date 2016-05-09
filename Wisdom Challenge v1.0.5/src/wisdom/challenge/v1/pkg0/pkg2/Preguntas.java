@@ -16,7 +16,8 @@ public class Preguntas {
       "Cuando Inició la Segunda Guerra Mundial",
       "Religión con más Seguidores", "Segundo País más Poblado del Mundo", 
       "País del Partido Político : 'Asociación Popular - Amanecer Dorado'",
-      "El Sengudo País más Grande del Mundo"
+      "El Segundo País con más Superficie del Mundo","País Más Poblado de Latinoamérica",
+      "Oceano que Baña las Costas de Japón"
     };
     
     public String llamarPreguntas (int pos){

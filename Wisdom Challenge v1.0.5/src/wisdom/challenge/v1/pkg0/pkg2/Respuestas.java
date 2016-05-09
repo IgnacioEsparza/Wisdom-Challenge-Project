@@ -14,8 +14,8 @@ import java.util.StringTokenizer;
 public class Respuestas {
     // aqui se alojan todas las respuestas correctas, para luego hacer la compraración
     String [] resCorrectas = {
-        "Cristoforo Colombo","Inglés","Austria","George Washington","Londres","Inició 1939","Cristianismo","India",
-        "Grecia","Canadá"
+        "Cristoforo Colombo","Inglés","Austria","George Washington","Londres","En 1939","Cristianismo","India",
+        "Grecia","Canadá","Brasil","Pacífico"
     };
     
     //aqui van las respuestas señuelo con las correctas
@@ -29,7 +29,9 @@ public class Respuestas {
       /*6*/ "Islamismo,Cristianismo,Budismo,Hinduismo",
       /*7*/ "India,Estados Unidos,Japón,China",
       /*8*/ "Macedonia,Grecia,Bulgaria,Albania",
-      /*9*/ "China,Rusia,Estados Unidos,Canadá"
+      /*9*/ "China,Rusia,Estados Unidos,Canadá",
+      /*10*/"Colombia,México,Brasil,Argentina",
+            "Índico,Pacífico,Atlántico,Magnífico"
         
     };
     
