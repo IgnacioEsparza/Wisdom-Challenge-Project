@@ -4,30 +4,49 @@
  * and open the template in the editor.
  */
 package wisdomjframe;
+
+import java.awt.MouseInfo;
+import java.awt.Point;
 import wisdomchallenge.Nombre;
-//import com.sun.awt.AWTUtilities;
+import com.sun.awt.AWTUtilities;
+
 /**
  *
  * @author Ignacio Esparza
  */
 public class Menu extends javax.swing.JFrame {
 
+    int x, y;
+
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        componentes();
+    }
+
+    public void componentes() {
         setLocationRelativeTo(null);
         setTitle("Menú - Wisdom Challenge");
         setResizable(false);
         setSize(550, 580);
         saludo();
-        //AWTUtilities.setWindowOpaque(this, false);
+        Minimizar.setFocusable(false);
+        banner.setFocusable(false);
+        Salir1.setFocusable(false);
+        IniciarReto.setFocusable(false);
+        Opciones.setFocusable(false);
+        Puntajes.setFocusable(false);
+        WisChall.setFocusable(false);
+        AWTUtilities.setWindowOpaque(this, false);
     }
-    public void saludo (){
+
+    public void saludo() {
         Nombre n = new Nombre();
-        Saludo.setText("Hola "+n.mostrarNombre());
+        Saludo.setText("Hola " + n.mostrarNombre());
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,18 +60,29 @@ public class Menu extends javax.swing.JFrame {
         Puntajes = new javax.swing.JButton();
         Opciones = new javax.swing.JButton();
         IniciarReto = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
+        Minimizar = new javax.swing.JButton();
         Saludo = new javax.swing.JLabel();
+        Salir1 = new javax.swing.JButton();
+        banner = new javax.swing.JButton();
+        WisChall = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/menubg.png"))); // NOI18N
+        jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N
         jcMousePanel1.setMaximumSize(new java.awt.Dimension(550, 520));
         jcMousePanel1.setMinimumSize(new java.awt.Dimension(550, 520));
 
         Puntajes.setFont(new java.awt.Font("Diogenes", 0, 18)); // NOI18N
+        Puntajes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu1.png"))); // NOI18N
         Puntajes.setText("Puntajes");
+        Puntajes.setBorder(null);
+        Puntajes.setBorderPainted(false);
+        Puntajes.setContentAreaFilled(false);
+        Puntajes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Puntajes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Puntajes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu3.png"))); // NOI18N
+        Puntajes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu2.png"))); // NOI18N
         Puntajes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PuntajesActionPerformed(evt);
@@ -60,7 +90,15 @@ public class Menu extends javax.swing.JFrame {
         });
 
         Opciones.setFont(new java.awt.Font("Diogenes", 0, 18)); // NOI18N
+        Opciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu1.png"))); // NOI18N
         Opciones.setText("Opciones");
+        Opciones.setBorder(null);
+        Opciones.setBorderPainted(false);
+        Opciones.setContentAreaFilled(false);
+        Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Opciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Opciones.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu3.png"))); // NOI18N
+        Opciones.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu2.png"))); // NOI18N
         Opciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OpcionesActionPerformed(evt);
@@ -68,41 +106,126 @@ public class Menu extends javax.swing.JFrame {
         });
 
         IniciarReto.setFont(new java.awt.Font("Diogenes", 0, 18)); // NOI18N
+        IniciarReto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu1.png"))); // NOI18N
         IniciarReto.setText("Iniciar Reto");
+        IniciarReto.setBorder(null);
+        IniciarReto.setBorderPainted(false);
+        IniciarReto.setContentAreaFilled(false);
+        IniciarReto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IniciarReto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         IniciarReto.setMaximumSize(new java.awt.Dimension(1071, 477));
         IniciarReto.setMinimumSize(new java.awt.Dimension(1071, 477));
+        IniciarReto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu3.png"))); // NOI18N
+        IniciarReto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/botonMenu2.png"))); // NOI18N
         IniciarReto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarRetoActionPerformed(evt);
             }
         });
 
-        Salir.setText("x");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        Minimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/minimizar1.png"))); // NOI18N
+        Minimizar.setBorder(null);
+        Minimizar.setBorderPainted(false);
+        Minimizar.setContentAreaFilled(false);
+        Minimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Minimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Minimizar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/minimizar3.png"))); // NOI18N
+        Minimizar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/minimizar2.png"))); // NOI18N
+        Minimizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                MinimizarActionPerformed(evt);
             }
         });
 
-        Saludo.setFont(new java.awt.Font("Diogenes", 0, 24)); // NOI18N
+        Saludo.setFont(new java.awt.Font("Diogenes", 0, 18)); // NOI18N
         Saludo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        Salir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/apagar1.png"))); // NOI18N
+        Salir1.setBorder(null);
+        Salir1.setBorderPainted(false);
+        Salir1.setContentAreaFilled(false);
+        Salir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Salir1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Salir1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/apagar3.png"))); // NOI18N
+        Salir1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/apagar2.png"))); // NOI18N
+        Salir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Salir1ActionPerformed(evt);
+            }
+        });
+
+        banner.setBorder(null);
+        banner.setBorderPainted(false);
+        banner.setContentAreaFilled(false);
+        banner.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        banner.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bannerMousePressed(evt);
+            }
+        });
+        banner.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                bannerMouseDragged(evt);
+            }
+        });
+        banner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bannerActionPerformed(evt);
+            }
+        });
+
+        WisChall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/titleChallenge2.png"))); // NOI18N
+        WisChall.setBorder(null);
+        WisChall.setBorderPainted(false);
+        WisChall.setContentAreaFilled(false);
+        WisChall.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        WisChall.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        WisChall.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/data/titleChallenge3.png"))); // NOI18N
+        WisChall.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/data/titleChallenge3.png"))); // NOI18N
+        WisChall.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/data/titleChallenge3.png"))); // NOI18N
+        WisChall.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                WisChallMousePressed(evt);
+            }
+        });
+        WisChall.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                WisChallMouseDragged(evt);
+            }
+        });
+        WisChall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WisChallActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jcMousePanel1Layout = new javax.swing.GroupLayout(jcMousePanel1);
         jcMousePanel1.setLayout(jcMousePanel1Layout);
         jcMousePanel1Layout.setHorizontalGroup(
             jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jcMousePanel1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(Minimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
+                        .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Salir1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72))
+                    .addGroup(jcMousePanel1Layout.createSequentialGroup()
+                        .addComponent(WisChall)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
                 .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
                         .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Puntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IniciarReto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(188, 188, 188))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
-                        .addComponent(Salir)
-                        .addGap(239, 239, 239))
+                            .addComponent(Puntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IniciarReto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(178, 178, 178))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
                         .addComponent(Saludo, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(106, 106, 106))))
@@ -110,24 +233,32 @@ public class Menu extends javax.swing.JFrame {
         jcMousePanel1Layout.setVerticalGroup(
             jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(Salir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(Saludo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jcMousePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Minimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salir1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(banner, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(WisChall, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Saludo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(IniciarReto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Opciones)
-                .addGap(18, 18, 18)
-                .addComponent(Puntajes)
-                .addGap(129, 129, 129))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Puntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jcMousePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jcMousePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,9 +286,41 @@ public class Menu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_IniciarRetoActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    private void MinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinimizarActionPerformed
+        setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_MinimizarActionPerformed
+
+    private void Salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir1ActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
+    }//GEN-LAST:event_Salir1ActionPerformed
+
+    private void bannerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bannerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bannerActionPerformed
+
+    private void bannerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bannerMousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_bannerMousePressed
+
+    private void bannerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bannerMouseDragged
+        Point point = MouseInfo.getPointerInfo().getLocation();
+        setLocation(point.x - (x + x), point.y - (y + y));
+    }//GEN-LAST:event_bannerMouseDragged
+
+    private void WisChallMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WisChallMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WisChallMousePressed
+
+    private void WisChallMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WisChallMouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WisChallMouseDragged
+
+    private void WisChallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WisChallActionPerformed
+        Ventana v = new Ventana();
+        v.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_WisChallActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,10 +359,13 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IniciarReto;
+    private javax.swing.JButton Minimizar;
     private javax.swing.JButton Opciones;
     private javax.swing.JButton Puntajes;
-    private javax.swing.JButton Salir;
+    private javax.swing.JButton Salir1;
     private javax.swing.JLabel Saludo;
+    private javax.swing.JButton WisChall;
+    private javax.swing.JButton banner;
     private jcMousePanel.jcMousePanel jcMousePanel1;
     // End of variables declaration//GEN-END:variables
 }

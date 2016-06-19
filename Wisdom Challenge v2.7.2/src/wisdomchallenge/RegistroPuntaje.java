@@ -50,7 +50,6 @@ public class RegistroPuntaje {
                     String[] registro = regPuntaje.split("%");
                     Puntaje p = new Puntaje(registro[0], registro[1], registro[2], registro[3]);
                     pnjs[cont]=p.ordenarPuntajes();
-                    System.out.println("__________________________________________________");
                     cont++;
                 }
                 return pnjs;

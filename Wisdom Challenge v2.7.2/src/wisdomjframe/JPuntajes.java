@@ -78,6 +78,7 @@ public class JPuntajes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(550, 520));
         setMinimumSize(new java.awt.Dimension(550, 520));
+        setUndecorated(true);
 
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N
         jcMousePanel1.setMaximumSize(new java.awt.Dimension(550, 520));

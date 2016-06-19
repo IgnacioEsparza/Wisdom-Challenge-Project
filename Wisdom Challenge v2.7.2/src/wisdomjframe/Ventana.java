@@ -70,6 +70,7 @@ public class Ventana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.SystemColor.activeCaption);
+        setUndecorated(true);
 
         jcMousePanel1.setBackground(java.awt.SystemColor.scrollbar);
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N

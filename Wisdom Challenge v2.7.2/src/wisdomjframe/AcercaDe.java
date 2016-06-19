@@ -42,6 +42,7 @@ public class AcercaDe extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N
         jcMousePanel1.setMaximumSize(new java.awt.Dimension(550, 520));
@@ -61,7 +62,7 @@ public class AcercaDe extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Versión Actual : 2.6.4");
+        jLabel1.setText("Versión Actual : 2.7.4");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Lenguaje : Java Standard Edition 8 ");

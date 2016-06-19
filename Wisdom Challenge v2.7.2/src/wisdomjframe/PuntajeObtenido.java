@@ -39,6 +39,7 @@ public class PuntajeObtenido extends javax.swing.JFrame {
         puntajeObtenido1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N
         jcMousePanel1.setMaximumSize(new java.awt.Dimension(550, 520));

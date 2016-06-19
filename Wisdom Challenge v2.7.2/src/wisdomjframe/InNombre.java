@@ -44,6 +44,7 @@ public class InNombre extends javax.swing.JFrame {
         nombreActual = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/generalbg.png"))); // NOI18N
         jcMousePanel1.setMaximumSize(new java.awt.Dimension(550, 520));
